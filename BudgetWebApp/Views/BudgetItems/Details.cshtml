@@ -1,0 +1,137 @@
+﻿@model BudgetWebApp.Models.BudgetItems
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h3> Budget Results </h3>
+    <hr />
+    <p> Toatal Expenses R @ViewBag.Expenses</p>
+    <p> Monthly HomeLoan Repayment  R @ViewBag.HomeLoan</p>
+    <p> Monthly Car Installments R @ViewBag.CarInstallment </p>
+    <p> Monthly Balance R @ViewBag.Balance </p>
+    <br />
+    <h5> Loan Status </h5>
+    @if (@ViewBag.HomeLoan > @ViewBag.LoanApproval)
+    {
+        <p style="color:red;"> Approval of the home loan is unlikely !</p>
+    }
+    else
+    {
+        <p style="color:green;"> Your Loan will be Approved !</p>
+    }
+
+    <hr />
+    <dl class="card-columns">
+        <dt class="col-12">
+            @Html.DisplayNameFor(model => model.MonthlyIncome)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.MonthlyIncome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaxDeducted)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.TaxDeducted)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Groceries)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.Groceries)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WaterAndLight)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.WaterAndLight)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TravelCosts)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.TravelCosts)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cellphone)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.Cellphone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OtherExpense)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.OtherExpense)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rent)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.Rent)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PropyPrice)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.PropyPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PropDeposit)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.PropDeposit)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PropInterestRate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PropInterestRate) %
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PropRepayMonths)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PropRepayMonths) Months
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarModel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarModel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarPrice)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.CarPrice)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarDeposit)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.CarDeposit)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarInterstRate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CarInterstRate) %
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CarInsurancePrem)
+        </dt>
+        <dd class="col-sm-10">
+            R @Html.DisplayFor(model => model.CarInsurancePrem)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.BudgetId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<BudgetWebApp.Models.BudgetItems>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MonthlyIncome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaxDeducted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Groceries)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WaterAndLight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TravelCosts)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cellphone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OtherExpense)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    R @Html.DisplayFor(modelItem => item.MonthlyIncome)
+                </td>
+                <td>
+                    R @Html.DisplayFor(modelItem => item.TaxDeducted)
+                </td>
+                <td>
+                    R @Html.DisplayFor(modelItem => item.Groceries)
+                </td>
+                <td>
+                    R @Html.DisplayFor(modelItem => item.WaterAndLight)
+                </td>
+                <td>
+                    R @Html.DisplayFor(modelItem => item.TravelCosts)
+                </td>
+                <td>
+                    R @Html.DisplayFor(modelItem => item.Cellphone)
+                </td>
+                <td>
+                    R @Html.DisplayFor(modelItem => item.OtherExpense)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BudgetId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.BudgetId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.BudgetId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,47 @@
+﻿@model BudgetWebApp.Models.Savings
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Savings Results</h4>
+    <hr />
+    <p> You have to save : R @ViewBag.MonthlySavings Every month to reach your goal </p>
+    <p> Interest Earned  : R @ViewBag.Interest  </p>
+    <p> Your total Savings with added interest is : R @ViewBag.SavingsValue </p>
+    <hr/>
+    <br/>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TargetAmount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TargetAmount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NoOfYears)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NoOfYears)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Reason)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Reason)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.SavingId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
